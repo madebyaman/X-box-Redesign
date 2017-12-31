@@ -1,0 +1,23 @@
+@mixin flexy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin slidy($url) {
+  background: url($url) center center no-repeat;
+  background-size: cover;
+}
+
+@function pix-to-em($px) {
+  @return ($px/16 + em);
+}
+
+%clearfix {
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

@@ -1,0 +1,26 @@
+*,*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font;
+  color: $text-color;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+h1, h2, h3,
+h4, h5, h6,
+ul {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,8 @@
+.star-wars {
+  @include slidy('../img/Star-Wars-Battlefront-II-combat.png');
+  padding: pix-to-em(200) 0;
+}
+
+.carousel {
+  color: white;
+}
