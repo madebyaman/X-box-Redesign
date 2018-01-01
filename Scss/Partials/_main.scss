@@ -1,8 +1,98 @@
 .star-wars {
   @include slidy('../img/Star-Wars-Battlefront-II-combat.png');
-  padding: pix-to-em(200) 0;
 }
 
-.carousel {
+.playgrounds {
+  @include slidy('../img/playgrounds.jpg');
+}
+
+.forza{
+  @include slidy('../img/forza.jpg');
+}
+
+section .container {
+  padding: pix-to-em(180) 0;
+  @extend %clearfix;
+}
+
+section .left {
   color: white;
+
+  @media (min-width: 800px) {
+    float: right;
+    width: 50%;
+  }
+}
+
+h1.display-1 {
+  font-size: pix-to-em(36);
+  margin-bottom: 0.5em;
+
+  @media (min-width: 800px) {
+    font-size: pix-to-em(50);
+  }
+}
+
+p.intro {
+  font-size: pix-to-em(28);
+  margin-bottom: 0.3em;
+
+  @media (min-width: 800px) {
+    font-size: pix-to-em(36);
+  }
+
+  & + p {
+    line-height: 1.5;
+    margin-bottom: 1em;
+  }
+}
+
+button.main {
+  @include button($green, 0px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+button.secondary {
+  @include button($color: $dark-gradient);
+}
+
+button + button {
+  margin-left: 1em;
+}
+
+.slick-dots li.slick-active button:before,
+.slick-dots li button:before {
+  color: $green;
+}
+
+.slick-dots {
+  bottom: 25px;
+}
+
+.slick-dots li button:before {
+  font-size: 40px;
+}
+
+.slick-prev {
+  left: 25px;
+  z-index: 999;
+}
+
+.slick-next {
+  right: 25px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 40px;
+  color: $green;
+}
+
+.slick-next:before {
+  content: '\f0a9';
+  font-family: FontAwesome;
+}
+
+.slick-prev:before {
+  content: '\f0a8';
+  font-family: FontAwesome;
 }
