@@ -1,0 +1,75 @@
+.foot {
+  background: $dark-bg;
+  padding: 4em 0;
+  color: white;
+  text-align: center;
+
+  ul {
+    list-style: none;
+
+    h4 {
+      color: $green;
+      margin-bottom: 2em;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  li + li {
+    margin-top: 1.7em;
+  }
+
+  ul + ul {
+    margin-top: 2em;
+  }
+
+  .social {
+    font-size: 1.5em;
+    font-family: 'FontAwesome';
+    color: $green;
+    display: inline-block;
+    margin-top: 0px;
+  }
+
+  .container {
+    @media (min-width: 769px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+
+  @media (min-width: 769px) {
+    text-align: left;
+  }
+
+}
+
+#facebook::after {
+  content: "\f082";
+  margin-right: 0.5em;
+}
+
+#twitter::after {
+  content: "\f081";
+  margin-right: 0.5em;
+
+}
+
+#instagram::after {
+  content: "\f16d";
+}
+
+.copy {
+  margin-top: 0.4em;
+
+  p + p {
+    margin-top: 0.5em;
+  }
+}

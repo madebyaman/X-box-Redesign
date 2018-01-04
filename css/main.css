@@ -389,7 +389,7 @@ template {
 [hidden] {
   display: none; }
 
-section .container::after {
+.carousel .container::after {
   content: '';
   display: table;
   clear: both; }
@@ -405,10 +405,14 @@ body {
 img {
   max-width: 100%; }
 
-.container {
+.container,
+footer hr {
   width: 90%;
   max-width: 1024px;
   margin: 0 auto; }
+
+.foot hr {
+  margin-top: 2em; }
 
 h1, h2, h3,
 h4, h5, h6,
@@ -471,6 +475,9 @@ input.search-box {
   border-radius: 4px;
   border: 1px solid #ccc; }
 
+/*
+ Slider
+*/
 .star-wars {
   background: linear-gradient(black, transparent 50%), linear-gradient(0deg, rgba(255, 255, 255, 0.3), transparent), black url("../img/Star-Wars-Battlefront-II-combat.png") center center no-repeat;
   background-size: cover; }
@@ -483,7 +490,7 @@ input.search-box {
   background: linear-gradient(black, transparent 50%), linear-gradient(0deg, rgba(255, 255, 255, 0.3), transparent), black url("../img/forza.jpg") center center no-repeat;
   background-size: cover; }
 
-section .container {
+.carousel .container {
   padding: 11.25em 0; }
 
 section .left {
@@ -510,7 +517,7 @@ p.intro {
     line-height: 1.5;
     margin-bottom: 1em; }
 
-button.main {
+section.carousel button.main {
   background: #8DD83D;
   -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
@@ -522,8 +529,7 @@ button.main {
   border-color: none;
   border-style: none;
   cursor: pointer; }
-
-button.secondary {
+section.carousel button.secondary {
   background: linear-gradient(to bottom, #686C6F, #373A3C);
   padding: 8px 15px;
   color: white;
@@ -532,10 +538,12 @@ button.secondary {
   border-color: none;
   border-style: none;
   cursor: pointer; }
-
-button + button {
+section.carousel button + button {
   margin-left: 1em; }
 
+/*
+ Slick Plugin
+*/
 .slick-dots li.slick-active button:before,
 .slick-dots li button:before {
   color: #8DD83D; }
@@ -565,5 +573,207 @@ button + button {
 .slick-prev:before {
   content: '\f0a8';
   font-family: FontAwesome; }
+
+/*
+ highlights Section
+*/
+.highlights {
+  background: url("../img/tile.png") center center repeat, radial-gradient(circle at top center, #686C6F 0%, #373A3C 100%);
+  margin-top: -30px; }
+  .highlights .logo, .highlights h1, .highlights h2 {
+    text-align: center;
+    color: white; }
+  .highlights .container {
+    padding: 3.125em 0; }
+  .highlights h2 {
+    margin-top: -15px;
+    margin-bottom: 35px; }
+
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+  width: 320px;
+  height: 420px;
+  border-radius: 4px;
+  border: 1px solid #8DD83D; }
+  .card:last-of-type {
+    margin-bottom: 0px; }
+  .card .text {
+    padding: 2em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1; }
+    .card .text button {
+      background: #8DD83D;
+      padding: 8px 15px;
+      color: white;
+      font-size: 16px;
+      border-radius: 4px;
+      border-color: none;
+      border-style: none;
+      cursor: pointer;
+      margin-top: auto;
+      align-self: center;
+      padding: 1em 1.5em; }
+  .card h5 {
+    font-size: 18px;
+    font-weight: normal; }
+  .card h3 {
+    font-size: 24px;
+    font-weight: normal; }
+  .card .image {
+    background-color: white;
+    width: 318px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  @media (min-width: 1100px) {
+    .cards {
+      flex-direction: row;
+      justify-content: space-between; }
+      .cards .card {
+        margin-bottom: 0px; } }
+
+.text h5, .text h3 {
+  margin-bottom: 10px; }
+
+/*
+  Store
+*/
+.store {
+  background: linear-gradient(to bottom, rgba(23, 23, 23, 0.5), rgba(23, 23, 23, 0.5)), url("../img/store.jpg") center center no-repeat;
+  background-size: cover;
+  padding: 50px 0; }
+  .store h2 {
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin-bottom: 50px; }
+    .store h2 .icon {
+      content: '\f061';
+      font-family: 'FontAwesome';
+      font-weight: 100;
+      color: #8DD83D;
+      position: absolute;
+      left: 90%; }
+  .store .card {
+    margin-left: 1em; }
+  .store .secondary {
+    background: linear-gradient(to bottom, #686C6F, #373A3C);
+    padding: 8px 15px;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    border-color: none;
+    border-style: none;
+    cursor: pointer;
+    font-size: 21px;
+    margin: 0 auto; }
+
+/*
+  Xbox lab
+*/
+.lab {
+  background: url("../img/lab.png") center center no-repeat;
+  background-size: cover;
+  color: white; }
+  .lab .container {
+    padding: 7.125em 0; }
+  .lab h2 {
+    font-size: 2em; }
+    @media (min-width: 769px) {
+      .lab h2 {
+        font-size: 3em; } }
+  .lab p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem; }
+    @media (min-width: 769px) {
+      .lab p {
+        font-size: 1.5em; } }
+  .lab button {
+    margin-top: 3rem;
+    font-size: 1rem;
+    padding: 0.4rem 1em; }
+  .lab .secondary {
+    background: linear-gradient(to bottom, #686C6F, #373A3C);
+    padding: 8px 15px;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    border-color: none;
+    border-style: none;
+    cursor: pointer; }
+  .lab .main {
+    background: #8DD83D;
+    padding: 8px 15px;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    border-color: none;
+    border-style: none;
+    cursor: pointer; }
+  .lab button + button {
+    margin-left: 1em; }
+
+.foot {
+  background: #373A3C;
+  padding: 4em 0;
+  color: white;
+  text-align: center; }
+  .foot ul {
+    list-style: none; }
+    .foot ul h4 {
+      color: #8DD83D;
+      margin-bottom: 2em;
+      font-weight: bold;
+      font-size: 18px; }
+  .foot a {
+    text-decoration: none;
+    color: white; }
+  .foot li + li {
+    margin-top: 1.7em; }
+  .foot ul + ul {
+    margin-top: 2em; }
+  .foot .social {
+    font-size: 1.5em;
+    font-family: 'FontAwesome';
+    color: #8DD83D;
+    display: inline-block;
+    margin-top: 0px; }
+  @media (min-width: 769px) {
+    .foot .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline; } }
+  @media (min-width: 769px) {
+    .foot {
+      text-align: left; } }
+
+#facebook::after {
+  content: "\f082";
+  margin-right: 0.5em; }
+
+#twitter::after {
+  content: "\f081";
+  margin-right: 0.5em; }
+
+#instagram::after {
+  content: "\f16d"; }
+
+.copy {
+  margin-top: 0.4em; }
+  .copy p + p {
+    margin-top: 0.5em; }
 
 /*# sourceMappingURL=main.css.map */

@@ -11,8 +11,8 @@
   background-size: cover;
 }
 
-@function pix-to-em($px) {
-  @return ($px/16 + em);
+@function pix-to-em($px, $context: 16) {
+  @return (($px / $context) *  1em);
 }
 
 %clearfix {

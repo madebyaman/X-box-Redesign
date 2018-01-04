@@ -1,3 +1,7 @@
+/*
+ Slider
+*/
+
 .star-wars {
   @include slidy('../img/Star-Wars-Battlefront-II-combat.png');
 }
@@ -10,7 +14,7 @@
   @include slidy('../img/forza.jpg');
 }
 
-section .container {
+.carousel .container {
   padding: pix-to-em(180) 0;
   @extend %clearfix;
 }
@@ -47,17 +51,24 @@ p.intro {
   }
 }
 
-button.main {
-  @include button($green, 0px 2px 4px rgba(0, 0, 0, 0.5));
+section.carousel {
+  button.main {
+    @include button($green, 0px 2px 4px rgba(0, 0, 0, 0.5));
+  }
+
+  button.secondary {
+    @include button($color: $dark-gradient);
+  }
+
+  button + button {
+    margin-left: 1em;
+  }
 }
 
-button.secondary {
-  @include button($color: $dark-gradient);
-}
 
-button + button {
-  margin-left: 1em;
-}
+/*
+ Slick Plugin
+*/
 
 .slick-dots li.slick-active button:before,
 .slick-dots li button:before {
@@ -95,4 +106,186 @@ button + button {
 .slick-prev:before {
   content: '\f0a8';
   font-family: FontAwesome;
+}
+
+/*
+ highlights Section
+*/
+
+.highlights {
+  background: url('../img/tile.png') center center repeat, $dark-radial-bg;
+  margin-top: -30px;
+
+  & .logo,
+  & h1,
+  & h2 {
+    text-align: center;
+    color: white;
+  }
+  .container {
+    padding: pix-to-em(50) 0;
+  }
+
+  h2 {
+    margin-top: -15px;
+    margin-bottom: 35px;
+  }
+}
+
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+  width: 320px;
+  height: 420px;
+  border-radius: 4px;
+  border: 1px solid $green;
+
+  &:last-of-type {
+    margin-bottom: 0px;
+  }
+
+  .text {
+    padding: 2em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+
+    button {
+      @include button($green);
+      margin-top: auto;
+      align-self: center;
+      padding: pix-to-em(16) pix-to-em(24);
+    }
+  }
+
+  h5 {
+    font-size: 18px;
+    font-weight: normal;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+  .image {
+    background-color: lighten(grey, 80%);
+    width: 318px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 1100px) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    .card {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.text{
+  h5, h3 {
+    margin-bottom: 10px;
+  }
+}
+
+
+/*
+  Store
+*/
+
+.store {
+  background: linear-gradient(to bottom, rgba(23, 23, 23, .5), rgba(23, 23, 23, .5)), url('../img/store.jpg') center center no-repeat;
+  background-size: cover;
+  padding: 50px 0;
+
+  h2 {
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin-bottom: 50px;
+
+    .icon {
+      content: '\f061';
+      font-family: 'FontAwesome';
+      font-weight: 100;
+      color: $green;
+      position: absolute;
+      left: 90%;
+    }
+  }
+
+  .card {
+    margin-left: 1em;
+  }
+
+  .secondary {
+    @include button($dark-gradient);
+    font-size: 21px;
+    margin: 0 auto;
+  }
+}
+
+/*
+  Xbox lab
+*/
+
+.lab {
+  background: url('../img/lab.png') center center no-repeat;
+  background-size: cover;
+  color: white;
+
+  .container {
+    padding: pix-to-em(114) 0;
+  }
+
+  h2 {
+    font-size: 2em;
+
+    @media (min-width: 769px) {
+      font-size: 3em;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+
+    @media (min-width: 769px) {
+      font-size: 1.5em;
+    }
+  }
+
+  button {
+    margin-top: 3rem;
+    font-size: 1rem;
+    padding: 0.4rem 1em;
+  }
+
+  .secondary {
+    @include button($dark-gradient);
+  }
+
+  .main {
+    @include button($green);
+  }
+
+  button + button {
+    margin-left: 1em;
+  }
 }
