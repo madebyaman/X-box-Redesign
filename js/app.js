@@ -31,23 +31,10 @@ $('.carousel').slick({
 });
 
 $('.slides').slick({
-  slidesToShow: 4,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        arrows: false,
-        slidesToShow: 3
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        arrows: false,
-        slidesToShow: 1
-      }
-    }
-  ]
+  infinite: true,
+  slidesToShow: 1,
+  centerMode: false,
+  variableWidth: true
 });
 
 $('.slides .slick-prev').hide();

@@ -602,7 +602,7 @@ section.carousel button + button {
     margin-bottom: 0px; }
   .card .text {
     padding: 2em 1em;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     align-items: flex-start;
     flex: 1; }
@@ -667,7 +667,15 @@ section.carousel button + button {
       position: absolute;
       left: 90%; }
   .store .card {
-    margin-left: 1em; }
+    margin-left: 1em;
+    max-width: 320px;
+    max-height: 420px; }
+    .store .card button {
+      align-self: center; }
+  .store h5 {
+    font-size: 16px; }
+  .store h3 {
+    font-size: 21px; }
   .store .secondary {
     background: linear-gradient(to bottom, #686C6F, #373A3C);
     padding: 8px 15px;
@@ -679,6 +687,8 @@ section.carousel button + button {
     cursor: pointer;
     font-size: 21px;
     margin: 0 auto; }
+  .store .button {
+    text-align: center; }
 
 /*
   Xbox lab
